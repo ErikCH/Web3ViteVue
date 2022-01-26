@@ -5,6 +5,7 @@ export const useUserStore = defineStore('user', () => {
    * Current named of the user.
    */
   const savedName = ref('')
+  const loading = ref(false)
   const previousNames = ref(new Set<string>())
 
   const usedNames = computed(() => Array.from(previousNames.value))
@@ -23,10 +24,17 @@ export const useUserStore = defineStore('user', () => {
     savedName.value = name
   }
 
+  function setLoader(value: boolean) {
+    console.log('setloader', value)
+    loading.value = value
+  }
+
   return {
     setNewName,
     otherNames,
     savedName,
+    setLoader,
+    loading,
   }
 })
 

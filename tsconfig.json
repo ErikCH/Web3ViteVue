@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
+    "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
     "types": [
       "cypress",
